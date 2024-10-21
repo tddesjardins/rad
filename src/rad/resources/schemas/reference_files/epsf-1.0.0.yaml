@@ -53,13 +53,14 @@ properties:
         required: [pixel_x, pixel_y]
   psf:
     title: ePSF Stamps
-    description: Postage stamps of ePSF models. The 4-dimensional array is
-        ordered by (defocus, effective_temperature, pixel_x, pixel_y)
-        in the file metadata.
+    description: Postage stamps of ePSF models. The 5-dimensional array is
+        ordered by (defocus, effective_temperature, grid_position, epsf_y, epsf_x)
+        where the first three indices come from the file metadata and the last
+        two (psf_y and psf_x) are the postage stamp of the ePSF.
     tag: tag:stsci.edu:asdf/core/ndarray-1.*
     datatype: float32
     exact_datatype: true
-    ndim: 4
+    ndim: 5
   extended_psf:
     title: Extended ePSF Stamp
     description: Postage stamp of a bright ePSF model with extended wings.
